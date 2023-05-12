@@ -8,6 +8,7 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-    score = SentimentAnalysis.analyse(u'这个实在是太好用了，我非常的喜欢，下次一定还会购买的！')
+    comments = u'这个很棒，我很喜欢！'
+    score = SentimentAnalysis.analyse(comments)
+    print(comments)
     print(score)
