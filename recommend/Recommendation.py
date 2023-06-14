@@ -30,13 +30,3 @@ class GMF(nn.Module):
         output = self.sigmoid(linear)
 
         return output
-
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-new_model = GMF(6040,3706,8)
-new_model.load_state_dict(torch.load("NeuralCF/Pre_train/m1-1m_GMF.pkl"))
-items = [32,34,35,30]
-u=0
-users = np.full(len(items), u, dtype='int32')
-data = torch.tensor(np.vstack([users, np.array(items)]).T).to(device)
-output = new_model(data)
-print(output)
